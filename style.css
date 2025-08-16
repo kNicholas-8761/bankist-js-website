@@ -1,5 +1,3 @@
-/* The page is NOT responsive. You can implement responsiveness yourself if you wanna have some fun 😃 */
-
 :root {
   --color-primary: #5ec576;
   --color-secondary: #ffcb03;
@@ -370,6 +368,76 @@ h4 {
 }
 .operations__icon--3 svg {
   fill: var(--color-tertiary);
+}
+/* --- Exchange Rates Section --- */
+#section--rates {
+  text-align: center;
+}
+
+#section--rates .rates__card {
+  margin-top: 3rem; /* space between heading and card */
+}
+
+.rates__card {
+  background: #fff;
+  border-radius: 1.2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  padding: 1rem 3rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.rates__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.rates__list li {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid #f1f1f1;
+  font-size: 1.5rem;
+}
+
+.rates__list li:last-child {
+  border-bottom: none;
+}
+
+.rates__flag {
+  font-size: 1.6rem;
+  margin-right: 0.6rem;
+}
+
+.rates__num {
+  font-family: monospace;
+  font-weight: 600;
+}
+
+.badge {
+  font-size: 1.1rem;
+  padding: 0.3rem 0.8rem;
+  border-radius: 1rem;
+  margin-left: auto;
+}
+
+.badge.live {
+  background: #d4edda;
+  color: #155724;
+}
+
+.badge.cached {
+  background: #ffeeba;
+  color: #856404;
+}
+
+.rates__loading,
+.rates__error {
+  text-align: center;
+  font-size: 1rem;
+  margin-top: 1rem;
 }
 
 /* SLIDER */
