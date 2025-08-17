@@ -13,8 +13,11 @@ const section1 = document.querySelector('#section--1');
 const tabs = document.querySelectorAll('.operations__tab');
 const tabsContainer = document.querySelector('.operations__tab-container');
 const tabsContent = document.querySelectorAll('.operations__content');
+const listEl = document.querySelector('.rates__list');
+const loadingEl = document.querySelector('.rates__loading');
+const errorEl = document.querySelector('.rates__error');
 
-const openModal = function (e) {
+/* const openModal = function (e) {
   e.preventDefault();
   modal.classList.remove('hidden');
   overlay.classList.remove('hidden');
@@ -252,3 +255,71 @@ const slider = function () {
   });
 };
 slider();
+
+async function fetchRates() {
+  try {
+    // show loading
+    loadingEl.classList.remove('hidden');
+    errorEl.classList.add('hidden');
+    listEl.classList.add('hidden');
+
+    // check cache
+    const cached = localStorage.getItem('fxRates');
+    if (cached) {
+      const { data, ts } = JSON.parse(cached);
+      const fresh = Date.now() - ts < 60 * 60 * 1000; // 1 hour cache
+      if (fresh) {
+        renderRates(data, '(cached)');
+        return;
+      }
+    }
+
+    // fetch live
+    const res = await fetch(
+      'https://api.frankfurter.app/latest?from=USD&to=EUR,GBP,JPY,AUD'
+    );
+    if (!res.ok) throw new Error('Network error');
+    const data = await res.json();
+
+    // save to cache
+    localStorage.setItem('fxRates', JSON.stringify({ data, ts: Date.now() }));
+
+    renderRates(data, '(live)');
+  } catch (err) {
+    console.error(err);
+    loadingEl.classList.add('hidden');
+    errorEl.classList.remove('hidden');
+  }
+}
+
+function renderRates(data, tag) {
+  loadingEl.classList.add('hidden');
+  errorEl.classList.add('hidden');
+  listEl.classList.remove('hidden');
+
+  listEl.innerHTML = Object.entries(data.rates)
+    .map(([cur, rate]) => `<li>1 ${data.base} = ${rate} ${cur} ${tag}</li>`)
+    .join('');
+} */
+
+///////////////////////////////////////
+// Mobile nav toggle
+const navToggle = document.querySelector('.burger');
+const navLinks = document.querySelector('.nav__links');
+
+navToggle.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+
+  // toggle icons inside the burger
+  const bars = navToggle.querySelector('.fa-bars');
+  const times = navToggle.querySelector('.fa-times');
+
+  bars.style.display = navLinks.classList.contains('active')
+    ? 'none'
+    : 'inline-block';
+  times.style.display = navLinks.classList.contains('active')
+    ? 'inline-block'
+    : 'none';
+});
+
+// fetchRates();

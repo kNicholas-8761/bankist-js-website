@@ -128,7 +128,7 @@ img {
   background-color: rgba(255, 255, 255, 0.95);
 }
 
-.nav__logo {
+.nav__logo img {
   height: 4.5rem;
   transition: all 0.3s;
 }
@@ -151,6 +151,11 @@ img {
   text-decoration: none;
   display: block;
   transition: all 0.3s;
+}
+.nav__link--btn {
+  white-space: nowrap;
+  flex-shrink: 0;
+  min-width: max-content;
 }
 
 .nav__link--btn:link,
@@ -739,4 +744,123 @@ h4 {
   color: #bbb;
   font-size: 1.5rem;
   font-weight: 400;
+}
+
+/* MOBILE */
+
+@media (max-width: 767px) {
+  .nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 0 1.5rem;
+  }
+  .nav__item {
+    margin: 0;
+  }
+
+  .nav__links {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 10rem;
+    left: 0px;
+    gap: 1.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .nav__links.active {
+    display: flex;
+  }
+
+  .nav__links a {
+    text-decoration: none;
+    color: inherit;
+  }
+  .nav__links .btn {
+    display: inline-block;
+    padding: 0.75rem 1.75rem;
+    background-color: #4caf6d;
+    color: #fff;
+    border-radius: 2rem;
+    text-align: center;
+    white-space: nowrap;
+    flex-shrink: 0;
+    min-width: 160px;
+  }
+
+  .burger {
+    font-size: 2rem;
+    background: none;
+    display: block;
+    border: none;
+    cursor: pointer;
+  }
+
+  .burger .fa-times {
+    display: none;
+  }
+
+  .header {
+    padding: 0 1.5rem;
+  }
+
+  .header__title {
+    text-align: center;
+    padding: 2rem 0.8;
+  }
+
+  .highlight {
+    color: #4cafef;
+  }
+}
+
+/* TABLET */
+@media (max-width: 1024px) and (min-width: 768px) {
+  .header {
+    padding: 0 1rem;
+  }
+  .nav {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 1rem;
+
+    .burger {
+      display: none;
+    }
+
+    .nav__links {
+      flex-direction: row;
+      gap: 0;
+      display: flex !important;
+    }
+    .nav__link--btn {
+      padding: 0.4rem 1.2rem;
+      font-size: 0.9rem;
+    }
+    .nav__item {
+      margin-left: 2rem;
+    }
+
+    .header__title {
+      text-align: left;
+      max-width: 600px;
+      margin: 4rem auto;
+    }
+  }
+}
+/* DESKTOP */
+@media (min-width: 1024px) {
+  nav {
+    padding: 2rem 4rem;
+  }
+
+  .burger {
+    display: none;
+  }
 }
