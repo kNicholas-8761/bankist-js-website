@@ -8,6 +8,7 @@ const overlay = document.querySelector('.overlay');
 const btnCloseModal = document.querySelector('.btn--close-modal');
 const btnsOpenModal = document.querySelectorAll('.btn--show-modal');
 
+
 const openModal = function (e) {
   e.preventDefault();
   modal.classList.remove('hidden');
@@ -184,3 +185,25 @@ dotContainer.addEventListener('click', function (e) {
   }
 });
 */
+
+// Helper: connect to Binance WebSocket
+function connectCrypto(symbol, elementId) {
+  const socket = new WebSocket(
+    `wss://stream.binance.com:9443/ws/${symbol}@trade`
+  );
+
+  socket.onmessage = event => {
+    const data = JSON.parse(event.data);
+    const price = parseFloat(data.p).toFixed(2);
+    document.querySelector(elementId).textContent = `$${price}`;
+  };
+
+  socket.onerror = () => {
+    document.querySelector('.rates__error').classList.remove('hidden');
+  };
+}
+
+// Connect each coin
+connectCrypto('btcusdt', '#btc-price');
+connectCrypto('ethusdt', '#eth-price');
+connectCrypto('adausdt', '#ada-price');

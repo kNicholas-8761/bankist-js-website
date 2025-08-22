@@ -375,22 +375,69 @@ h4 {
 .operations__icon--3 svg {
   fill: var(--color-tertiary);
 }
-/* --- Exchange Rates Section --- */
-#section--rates {
+/* ===== Live Prices Section ===== */
+
+.hidden {
+  display: none;
+}
+/* Section container */
+.crypto {
+  padding: 4rem 2rem;
   text-align: center;
+  background: #f5f5f5;
 }
 
-#section--rates .rates__card {
-  margin-top: 3rem; /* space between heading and card */
+/* Heading area (same as your other sections) */
+.section__header {
+  margin-bottom: 2rem;
+}
+.section__description {
+  font-size: 2.4rem;
 }
 
-.rates__card {
-  background: #fff;
-  border-radius: 1.2rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-  padding: 1rem 3rem;
+.section__subtitle {
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  color: #28a745;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.section__title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+/* Crypto Section */
+#section--crypto {
+  padding: 6rem 3rem;
+  background-color: #f7f7f7;
+}
+
+#section--crypto .section__title {
+  font-size: 4rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+  color: #333;
+}
+.section__title span {
+  font-size: 2.5rem;
+}
+
+#section--crypto .card {
   max-width: 600px;
   margin: 0 auto;
+  padding: 1.5rem 2rem;
+  background: #fff;
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 .rates__list {
@@ -401,49 +448,19 @@ h4 {
 
 .rates__list li {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 0.8rem;
-  padding: 0.8rem 0;
-  border-bottom: 1px solid #f1f1f1;
-  font-size: 1.5rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #eee;
+  font-size: 2.5rem;
 }
 
 .rates__list li:last-child {
   border-bottom: none;
 }
 
-.rates__flag {
-  font-size: 1.6rem;
-  margin-right: 0.6rem;
-}
-
-.rates__num {
-  font-family: monospace;
-  font-weight: 600;
-}
-
-.badge {
-  font-size: 1.1rem;
-  padding: 0.3rem 0.8rem;
-  border-radius: 1rem;
-  margin-left: auto;
-}
-
-.badge.live {
-  background: #d4edda;
-  color: #155724;
-}
-
-.badge.cached {
-  background: #ffeeba;
-  color: #856404;
-}
-
-.rates__loading,
-.rates__error {
-  text-align: center;
-  font-size: 1rem;
-  margin-top: 1rem;
+.hidden {
+  display: none;
 }
 
 /* SLIDER */
@@ -847,6 +864,9 @@ h4 {
   .section__title {
     text-align: center;
   }
+  .section__description {
+    font-size: 1.8rem;
+  }
   .features {
     grid-template-columns: 1fr;
     margin: 0 2rem;
@@ -915,6 +935,15 @@ h4 {
   .operations__text {
     font-size: 1.3rem;
   }
+  #section--crypto .section__title {
+    font-size: 2.5rem;
+  }
+  .section__title span {
+    font-size: 2rem;
+  }
+  .rates__list li {
+    font-size: 1.5rem;
+  }
 }
 
 /* TABLET */
@@ -962,6 +991,9 @@ h4 {
   }
   .header__title h4 {
     font-size: 1.3rem;
+  }
+  .section__description {
+    font-size: 2rem;
   }
 
   .header__title .btn--text {
