@@ -33,7 +33,7 @@ body {
 
 /* GENERAL ELEMENTS */
 .section {
-  padding: 15rem 3rem;
+  padding: 18rem 3rem;
   border-top: 1px solid #ddd;
 
   transition: transform 1s, opacity 1s;
@@ -435,6 +435,11 @@ h4 {
   border-radius: 0.75rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
+#section--3 {
+  scroll-margin-top: 8rem;
+  padding: 10rem 3rem;
+  min-height: 100vh;
+}
 
 .rates__list {
   list-style: none;
@@ -808,6 +813,14 @@ h4 {
     flex-shrink: 0;
     min-width: 160px;
   }
+  .nav__link:link,
+  .nav__link:visited {
+    font-size: 1rem;
+  }
+
+  .nav__logo img {
+    height: 2.7rem;
+  }
 
   .burger {
     font-size: 2rem;
@@ -905,6 +918,9 @@ h4 {
   #section--2 .section__header {
     font-size: 1.6rem;
   }
+  #section--3 .section__title {
+    font-size: 2rem;
+  }
 
   .operations {
     padding: 4rem 1.5rem;
@@ -944,6 +960,10 @@ h4 {
   .operations__text {
     font-size: 1.3rem;
   }
+  .operations__content p {
+    font-size: 1.2rem;
+  }
+
   #section--4 .section__title {
     font-size: 2.5rem;
   }
@@ -1089,6 +1109,10 @@ h4 {
     gap: 0;
     display: flex !important;
   }
+  .nav__link:link,
+  .nav__link:visited {
+    font-size: 1.5rem;
+  }
 
   .nav .nav__link--btn {
     padding: 0.4rem 1.2rem;
@@ -1097,6 +1121,9 @@ h4 {
 
   .nav .nav__item {
     margin-left: 2rem;
+  }
+  .nav__logo img {
+    height: 3.7rem;
   }
 
   .header__title {
@@ -1169,8 +1196,14 @@ h4 {
     font-size: 1.2rem;
     line-height: 1.6;
   }
+  .operations__content p {
+    font-size: 1.4rem;
+  }
 
   /* Rates */
+  #section--3 .section__title {
+    font-size: 3rem;
+  }
 
   .rates__list li {
     font-size: 1.7rem;
