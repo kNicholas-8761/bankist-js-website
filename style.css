@@ -375,11 +375,7 @@ h4 {
 .operations__icon--3 svg {
   fill: var(--color-tertiary);
 }
-/* ===== Live Prices Section ===== */
 
-.hidden {
-  display: none;
-}
 /* Section container */
 .crypto {
   padding: 4rem 2rem;
@@ -411,12 +407,12 @@ h4 {
   gap: 0.5rem;
 }
 /* Crypto Section */
-#section--crypto {
+#section--3 {
   padding: 6rem 3rem;
   background-color: #f7f7f7;
 }
 
-#section--crypto .section__title {
+#section--3 .section__title {
   font-size: 4rem;
   font-weight: 700;
   text-align: center;
@@ -431,7 +427,7 @@ h4 {
   font-size: 2.5rem;
 }
 
-#section--crypto .card {
+#section--3 .card {
   max-width: 600px;
   margin: 0 auto;
   padding: 1.5rem 2rem;
@@ -457,10 +453,6 @@ h4 {
 
 .rates__list li:last-child {
   border-bottom: none;
-}
-
-.hidden {
-  display: none;
 }
 
 /* SLIDER */
@@ -784,16 +776,18 @@ h4 {
 
   .nav__links {
     display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
     width: 100%;
     flex-direction: column;
     align-items: center;
-    position: absolute;
-    top: 10rem;
-    left: 0px;
     gap: 1.5rem;
     list-style: none;
     margin: 0;
-    padding: 0;
+    padding: 1.5rem 0 3rem;
+    background-color: rgba(255, 255, 255, 0.95);
+    z-index: 999;
   }
   .nav__links.active {
     display: flex;
@@ -822,9 +816,21 @@ h4 {
     border: none;
     cursor: pointer;
   }
+  .burger .fa-bars {
+    display: inline-block;
+  }
 
   .burger .fa-times {
     display: none;
+  }
+
+  /* helper toggles */
+  .burger.show-x .fa-bars {
+    display: none;
+  }
+
+  .burger.show-x .fa-times {
+    display: inline-block;
   }
 
   .header {
@@ -938,7 +944,7 @@ h4 {
   .operations__text {
     font-size: 1.3rem;
   }
-  #section--crypto .section__title {
+  #section--4 .section__title {
     font-size: 2.5rem;
   }
   .section__title span {
