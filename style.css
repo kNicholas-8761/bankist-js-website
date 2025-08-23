@@ -438,7 +438,7 @@ h4 {
 #section--3 {
   scroll-margin-top: 8rem;
   padding: 10rem 3rem;
-  min-height: 100vh;
+  min-height: auto;
 }
 
 .rates__list {
